@@ -32,3 +32,4 @@ public class PetClinicApplication extends SpringBootServletInitializer {
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application.sources(PetClinicApplication.class);
     }
+}
