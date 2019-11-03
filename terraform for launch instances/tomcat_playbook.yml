@@ -11,11 +11,11 @@
     tomcat_permissions_production: True
 
     tomcat_users:
-      - username: "tomcat"
-        password: "NobStop1994"
+      - username: "tomcat-user"
+        password: "******"
         roles: "tomcat,manager-gui,manager-script,manager-jmx,manager-status,admin,manager,manager-gui"
       - username: "user0"
-        password: "NobStop1994"
+        password: "******"
         roles: "tomcat"
   roles: 
     - role: zaxos.tomcat-ansible-role
