@@ -12,4 +12,4 @@
  ==================================================================/_/_/_/
 
 :: Built with Spring Boot :: ${spring-boot.version}
-
+:: Configure for CI-CD project by Rakivnenko D. THX SPRING-BOOT for JAR ::
