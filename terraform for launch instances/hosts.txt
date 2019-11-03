@@ -1,0 +1,8 @@
+[Host]
+172.31.21.187 ansible_user=ec2-user ansible_ssh_private_key_file=/home/ec2-user/.ssh/newOhio.pem
+
+[webapp_prod]
+172.31.21.188 ansible_user=ec2-user ansible_ssh_private_key_file=/home/ec2-user/.ssh/newOhio.pem
+
+[Jenkins]
+172.31.21.189 ansible_user=ec2-user ansible_ssh_private_key_file=/home/ec2-user/.ssh/newOhio.pem

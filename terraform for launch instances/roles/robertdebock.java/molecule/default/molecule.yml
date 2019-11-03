@@ -1,0 +1,18 @@
+---
+dependency:
+  name: galaxy
+  options:
+    role-file: requirements.yml
+lint:
+  name: yamllint
+driver:
+  name: docker
+platforms:
+  - name: "${namespace:-robertdebock-}${image:-fedora}-${TOX_ENVNAME:-default}"
+    image: "${namespace:-robertdebock}/${image:-fedora}:${tag:-latest}"
+    command: sh -c "while true ; do sleep 30 ; done"
+    pre_build_image: yes
+provisioner:
+  name: ansible
+scenario:
+  name: default

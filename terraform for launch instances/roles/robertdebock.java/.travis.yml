@@ -1,0 +1,53 @@
+---
+language: python
+
+python:
+  - "3.7"
+
+services:
+  - docker
+
+env:
+  global:
+    namespace="robertdebock"
+  matrix:
+    - image="alpine"
+    - image="alpine" tag="edge"
+    # - namespace="archlinux" image="base"
+    - image="debian" tag="stable"
+    - image="debian" tag="unstable"
+    - image="debian"
+    - image="fedora"
+    - image="fedora" tag="rawhide"
+    - image="centos" tag="7"
+    - image="redhat" tag="7"
+    - image="centos"
+    - image="redhat"
+    - image="opensuse"
+    - image="ubuntu" tag="rolling"
+    - image="ubuntu" tag="devel"
+    - image="ubuntu"
+
+matrix:
+  allow_failures:
+    - env: image="alpine" tag="edge"
+    - env: image="debian" tag="unstable"
+    - env: image="fedora" tag="rawhide"
+    - env: image="ubuntu" tag="rolling"
+    - env: image="ubuntu" tag="devel"
+
+cache:
+  - pip
+
+install:
+  - pip install --upgrade pip
+  - pip install tox
+
+script:
+  - tox --parallel all
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
+  slack:
+    secure: "MCuv6yhgLBH0MDE5n0SyyUXgipF7b6l6ex54m/aR/AHEbxYs3DHHm2IKAKVLz3xkRtL72TnIAglrvgb7iocE6as64kHP1ahxexvN0Qbt1bGW6HlJ2n2Y4Iv5tXRiC8HyPVx2gOOHbwiRXblsy6ckCOy0DaKpFUnJ+CYzTZs3iDgDhURZgxFzN/Mhy4AoQof9qPaCTuwNfYBBBgSTZCPLQShB3NLcze6O5e1GP07neU3r+YsfHwtN7SkwKxDBX9e60CwQULLh3rHHC5J/axDvGNyNg9SYyJN+cZQffPhhZepGIMoi8G8UjySmRz2wEdcqij2tTICtMpPywQy3DBhnxvHPyuI6LDQ6qYADch/kpwcRoUYBhGK1gTmh/wuwvhstANjc1mPLNsM0ryyDJxPp6aW3ahicAFg4zoV9R96ilD/kh+JsX0885o+wd4ub94qSzSsu4dx3yzNQM/LCbXrVVESKctX4zaDxr8+fKuYC/+rFu2tBz1ElnJf/CsDxy6IbS6XDp5VJhxLBaZl6jBivHHJicl0P42zkgTfCwnFFvHkZEMXJPYP72WncTBrsG8Oj84qfIast84rYz9CA3DbnNZ3UTJVOaSCrsNdoMoJ7pygBGrIOU0Jr/KNCGkj7WoBXNQZ07y/u1t9RHlkCoDc1Xr5pCJCIhHB8FieqZgQyxxY="
+  email: false
