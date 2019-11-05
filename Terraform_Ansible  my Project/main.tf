@@ -71,7 +71,7 @@ resource "aws_instance" "Jenkins" {
       sleep 50;
       ansible-playbook -i hosts.txt maven.yml
       sleep 50;
-      ansible-playbook -i hosts.txt Playbook-jenkins.yml
+      ansible-playbook -i hosts.txt -v Playbook-jenkins.yml
     EOT
   }
 
