@@ -12,3 +12,4 @@ This project can be deployed via Jenkins and some addons like : GIT plugins - co
 ________________________________________________________________________________________________________
 Commit to master branch to launch Jenkins build.
 Change
+new build
