@@ -67,7 +67,12 @@ resource "aws_instance" "Jenkins" {
       working_dir = "${var.ansible_dir}"
       ansible-playbook -i hosts.txt java.yml
       ansible-playbook -i hosts.txt maven.yml
+<<<<<<< HEAD
       ansible-playbook -i hosts.txt Playbook-jenkins.yml
+=======
+      sleep 50;
+      ansible-playbook -i hosts.txt -v Playbook-jenkins.yml
+>>>>>>> c8628f341592c1424c095a7f9509e1556072a29b
     EOT
   }
 
