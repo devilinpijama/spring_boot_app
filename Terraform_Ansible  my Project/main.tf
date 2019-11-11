@@ -20,7 +20,6 @@ resource "aws_instance" "web" {
 # Count of VMs in aws  -  count                        = 4
 #   ami - ID of machine (on creation pages)
     ami                          = "ami-00c03f7f7f2ec15c3"
-#   availability_zone            = "us-east-2a"
     instance_type                = "t2.micro"
     key_name                     = "newOhio"
     private_ip                   = "172.31.21.188"
@@ -35,7 +34,6 @@ resource "aws_instance" "web" {
       sleep 50;
       working_dir = "${var.ansible_dir}"
       ansible-playbook -i hosts.txt java_tom.yml
-      sleep 50;
       ansible-playbook -i hosts.txt tomcat_playbook.yml
       
   EOT
@@ -68,9 +66,7 @@ resource "aws_instance" "Jenkins" {
       sleep 50;
       working_dir = "${var.ansible_dir}"
       ansible-playbook -i hosts.txt java.yml
-      sleep 50;
       ansible-playbook -i hosts.txt maven.yml
-      sleep 50;
       ansible-playbook -i hosts.txt Playbook-jenkins.yml
     EOT
   }
