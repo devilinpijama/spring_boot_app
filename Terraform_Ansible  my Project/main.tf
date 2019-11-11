@@ -43,10 +43,7 @@ resource "aws_instance" "web" {
 
 #resource specs Jenkins Node
 resource "aws_instance" "Jenkins" {
-# Count of VMs in aws  -  count                        = 4
-#   ami - ID of machine (on creation pages)
     ami                          = "ami-00c03f7f7f2ec15c3"
-#   availability_zone            = "us-east-2a"
     instance_type                = "t2.small"
     key_name                     = "newOhio"
     private_ip                   = "172.31.21.189"
@@ -67,12 +64,7 @@ resource "aws_instance" "Jenkins" {
       working_dir = "${var.ansible_dir}"
       ansible-playbook -i hosts.txt java.yml
       ansible-playbook -i hosts.txt maven.yml
-<<<<<<< HEAD
-      ansible-playbook -i hosts.txt Playbook-jenkins.yml
-=======
-      sleep 50;
       ansible-playbook -i hosts.txt -v Playbook-jenkins.yml
->>>>>>> c8628f341592c1424c095a7f9509e1556072a29b
     EOT
   }
 
