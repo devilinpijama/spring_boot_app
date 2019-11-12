@@ -10,7 +10,7 @@ For Using Ansible change it .cfg for terraform directory path: Change :
 
 This project can be deployed via Jenkins and some addons like : GIT plugins - connect repo and adding WebHook, Deploy to container Plugin - deployer to tomcat, etc. 
 ________________________________________________________________________________________________________
-Commit to master branch to launch Jenkins build.
-Change
-new build
-new build v2
+
+
+Commit: 
+EPAM. <Summer> 2019.11.12 6:15PM
